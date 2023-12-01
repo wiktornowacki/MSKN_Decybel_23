@@ -1,0 +1,1 @@
+disp("hello, dzien dobry bonjour")
