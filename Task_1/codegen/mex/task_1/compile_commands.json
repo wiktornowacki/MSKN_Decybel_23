@@ -1,0 +1,134 @@
+[
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   \"C:\\Program Files\\MATLAB\\R2023b\\toolbox\\nav\\navalgs2\\builtins\\libsrc\\priorityqueuecodegen\\priorityqueue_api.cpp\" /Fobuild\\win64\\priorityqueue_api.obj",
+    "file": "C:/Program Files/MATLAB/R2023b/toolbox/nav/navalgs2/builtins/libsrc/priorityqueuecodegen/priorityqueue_api.cpp",
+    "output": "build/win64/priorityqueue_api.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   task_1_data.c /Fobuild\\win64\\task_1_data.obj",
+    "file": "task_1_data.c",
+    "output": "build/win64/task_1_data.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   rt_nonfinite.c /Fobuild\\win64\\rt_nonfinite.obj",
+    "file": "rt_nonfinite.c",
+    "output": "build/win64/rt_nonfinite.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   task_1_initialize.c /Fobuild\\win64\\task_1_initialize.obj",
+    "file": "task_1_initialize.c",
+    "output": "build/win64/task_1_initialize.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   task_1_terminate.c /Fobuild\\win64\\task_1_terminate.obj",
+    "file": "task_1_terminate.c",
+    "output": "build/win64/task_1_terminate.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   task_1.c /Fobuild\\win64\\task_1.obj",
+    "file": "task_1.c",
+    "output": "build/win64/task_1.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   plannerAStarGrid.c /Fobuild\\win64\\plannerAStarGrid.obj",
+    "file": "plannerAStarGrid.c",
+    "output": "build/win64/plannerAStarGrid.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   ind2sub.c /Fobuild\\win64\\ind2sub.obj",
+    "file": "ind2sub.c",
+    "output": "build/win64/ind2sub.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   validateAStarBuiltinCostFunction.c /Fobuild\\win64\\validateAStarBuiltinCostFunction.obj",
+    "file": "validateAStarBuiltinCostFunction.c",
+    "output": "build/win64/validateAStarBuiltinCostFunction.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   MapInterface.c /Fobuild\\win64\\MapInterface.obj",
+    "file": "MapInterface.c",
+    "output": "build/win64/MapInterface.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   binaryOccupancyMap.c /Fobuild\\win64\\binaryOccupancyMap.obj",
+    "file": "binaryOccupancyMap.c",
+    "output": "build/win64/binaryOccupancyMap.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   plannerAStarGrid1.c /Fobuild\\win64\\plannerAStarGrid1.obj",
+    "file": "plannerAStarGrid1.c",
+    "output": "build/win64/plannerAStarGrid1.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   warning.c /Fobuild\\win64\\warning.obj",
+    "file": "warning.c",
+    "output": "build/win64/warning.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   handle.c /Fobuild\\win64\\handle.obj",
+    "file": "handle.c",
+    "output": "build/win64/handle.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   interface\\_coder_task_1_api.c /Fobuild\\win64\\_coder_task_1_api.obj",
+    "file": "interface/_coder_task_1_api.c",
+    "output": "build/win64/_coder_task_1_api.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   interface\\_coder_task_1_mex.c /Fobuild\\win64\\_coder_task_1_mex.obj",
+    "file": "interface/_coder_task_1_mex.c",
+    "output": "build/win64/_coder_task_1_mex.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   eml_int_forloop_overflow_check.c /Fobuild\\win64\\eml_int_forloop_overflow_check.obj",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/win64/eml_int_forloop_overflow_check.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   indexShapeCheck.c /Fobuild\\win64\\indexShapeCheck.obj",
+    "file": "indexShapeCheck.c",
+    "output": "build/win64/indexShapeCheck.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   sumMatrixIncludeNaN.c /Fobuild\\win64\\sumMatrixIncludeNaN.obj",
+    "file": "sumMatrixIncludeNaN.c",
+    "output": "build/win64/sumMatrixIncludeNaN.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   task_1_emxutil.c /Fobuild\\win64\\task_1_emxutil.obj",
+    "file": "task_1_emxutil.c",
+    "output": "build/win64/task_1_emxutil.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   interface\\_coder_task_1_info.c /Fobuild\\win64\\_coder_task_1_info.obj",
+    "file": "interface/_coder_task_1_info.c",
+    "output": "build/win64/_coder_task_1_info.obj"
+  },
+  {
+    "directory": "C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\\codegen\\mex\\task_1",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\rafal\\Documents\\MATLAB\\task1_max_points\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\\nav\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023b\\extern\\include\" /I \".\" -DMODEL=task_1_mex   \"C:\\Program Files\\MATLAB\\R2023b\\extern\\version\\c_mexapi_version.c\" /Fobuild\\win64\\c_mexapi_version.obj",
+    "file": "C:/Program Files/MATLAB/R2023b/extern/version/c_mexapi_version.c",
+    "output": "build/win64/c_mexapi_version.obj"
+  }
+]
