@@ -1,91 +1,142 @@
-close all; clear;
-%% obróbka danych
-data = load("Task_2_Training_Dataset.mat");
+%%Wczytanie do zmiennej obrazków z aktualnego folderu
+% Autor: Wiktoria Marczuk, MSKN Decybel
+% Skrypt wymaga umieszczenia go bezpośrednio w folderze ze zdjęciami do
+% testów
+imagefiles = dir('*.png'); 
+n_files=length(imagefiles);
+saveToFile=struct;
 
-WEKTOR_poj = [data.Task_2_Training_Data.BoundingBox];
-WEKTOR_gotowy = [];
+%% pętla główna iterująca po obrazkach z folderu
+for ii=1:n_files
+    currentfilename = imagefiles(ii).name;
+    przykladowy_obrazek = imread(currentfilename);
+    
+    %% pierwszy thresholding i tworzenie maski całego obrazka przy użyciu Color Thresholder App
+    I = przykladowy_obrazek;
+    % Define thresholds for channel 1 based on histogram settings
+    channel1Min = 142.000;
+    channel1Max = 187.000;
+    
+    % Define thresholds for channel 2 based on histogram settings
+    channel2Min = 109.000;
+    channel2Max = 164.000;
+    
+    % Define thresholds for channel 3 based on histogram settings
+    channel3Min = 58.000;
+    channel3Max = 130.000;
+    
+    % Create mask based on chosen histogram thresholds
+    sliderBW = (I(:,:,1) >= channel1Min ) & (I(:,:,1) <= channel1Max) & ...
+        (I(:,:,2) >= channel2Min ) & (I(:,:,2) <= channel2Max) & ...
+        (I(:,:,3) >= channel3Min ) & (I(:,:,3) <= channel3Max);
+    BW = sliderBW;
+    
+    %% operacje morfologiczne 
+    SE = strel("disk",2);
+    otwarcie_obrazka = imopen(BW, SE);
+    SE = strel("disk",5);
+    zamkniecie_przykladowego_obrazka = imclose(otwarcie_obrazka, SE);
 
-for x=1:length(WEKTOR_poj)/4
-    WEKTOR_gotowy = [WEKTOR_gotowy; {[WEKTOR_poj(x), WEKTOR_poj(x+1), WEKTOR_poj(x+2), WEKTOR_poj(x+3)]}];
+    %% wyszukiwanie obszarów na obrazie mogących być znakiem drogowym
+    hblobanalysis = vision.BlobAnalysis('MinimumBlobArea',200,'MaximumBlobArea',3000);
+    [obj_area, obj_centorid, bbox_oryginalny_obrazek] = step(hblobanalysis, zamkniecie_przykladowego_obrazka);
+   
+    %% zerowanie bounding box które nie są kwadratami 
+    for i=1:height(bbox_oryginalny_obrazek)
+        if bbox_oryginalny_obrazek(i,3)<=bbox_oryginalny_obrazek(i,4)*1.1 && bbox_oryginalny_obrazek(i,3)>=bbox_oryginalny_obrazek(i,4)*0.9
+        bbox_oryginalny_obrazek(i,:);
+        else
+        bbox_oryginalny_obrazek(i,:)=0;
+        end
+    end
+
+
+    %% usuwanie wierszy które są zerami z wektora bounding boxów
+    bbox=bbox_oryginalny_obrazek.';
+    SBW_col=sum(bbox,1);
+    col_left=find(SBW_col,1,"first");
+    col_right=find(SBW_col,1,"last");
+    bbox=bbox(:,col_left:col_right);
+    bbox_oryginalny_obrazek=bbox.';
+
+    %% deklaracja wektora pomoniczego
+    procentowy_udzial_bieli_w_calej_masce = zeros(1, height(bbox));
+
+    %% pętla iterująca po bouonding boxach zakategoryzowanych jako mogące zawierać znak drogowy
+    for i=1:height(bbox_oryginalny_obrazek)
+
+        bbox = bbox_oryginalny_obrazek;
+        bbox(i,1) = bbox(i,1);
+        bbox(i,2) = bbox(i,2);
+        bbox(i,3) = bbox(i,3);
+        bbox(i,4) = bbox(i,4);
+    
+        obrazek_przyciety_w_miejscu_gdzie_maska = imcrop(przykladowy_obrazek,bbox(i,:));
+
+    
+        %% ponowny thresholding colorów dla mniejszych obrazków
+        I = obrazek_przyciety_w_miejscu_gdzie_maska;
+    
+        % Define thresholds for channel 1 based on histogram settings
+        channel1Min = 147.000;
+        channel1Max = 161.000;
+        
+        % Define thresholds for channel 2 based on histogram settings
+        channel2Min = 127.000;
+        channel2Max = 167.000;
+        
+        % Define thresholds for channel 3 based on histogram settings
+        channel3Min = 153.000;
+        channel3Max = 166.000;
+        
+        % Create mask based on chosen histogram thresholds jeśli nie ma obrazka
+        % to przypisujemy wartości bbox na zera bo nie jest możliwe wykrycie
+        try 
+        sliderBW = (I(:,:,1) >= channel1Min ) & (I(:,:,1) <= channel1Max) & ...
+            (I(:,:,2) >= channel2Min ) & (I(:,:,2) <= channel2Max) & ...
+            (I(:,:,3) >= channel3Min ) & (I(:,:,3) <= channel3Max);
+            BW = sliderBW;
+        catch
+            powiekszona_granica=[0 0 0 0];
+        end
+    
+    %% operacje morfologiczne
+            SE = strel("disk",2);
+            maska_malego_obrazka_w_iteracji = imclose(BW, SE);
+
+            s = size(maska_malego_obrazka_w_iteracji);
+            procentowy_udzial_bieli_w_calej_masce(i) = sum(sum(maska_malego_obrazka_w_iteracji))/(s(1)*s(2));
+              
+    end
+    
+    % obliczenie pomocniczej wartości do wyboru bardziej prawodpodobnych
+    % zdjęć
+    [maksimalna_wartosc_bialych_pikseli, indeks_obrazka_z_maksymalna_wartoscia_bieli] = max(procentowy_udzial_bieli_w_calej_masce);
+    
+    %% skalowanie bboxa aby pokrywał cały znak (łącznie z białą obwódką)
+    try
+    przykladowy_obrazek_z_wybranym_bbox = insertShape(przykladowy_obrazek, "rectangle",bbox_oryginalny_obrazek(indeks_obrazka_z_maksymalna_wartoscia_bieli,:), "LineWidth",4);
+    
+    %% obliczone powiekszone granice dla białej obwódki na podstawie proporcji znaku
+    powiekszona_granica = [bbox_oryginalny_obrazek(indeks_obrazka_z_maksymalna_wartoscia_bieli,1) - bbox_oryginalny_obrazek(indeks_obrazka_z_maksymalna_wartoscia_bieli,3)*0.37, ...
+                            bbox_oryginalny_obrazek(indeks_obrazka_z_maksymalna_wartoscia_bieli,2) - bbox_oryginalny_obrazek(indeks_obrazka_z_maksymalna_wartoscia_bieli,4)*0.37, ...
+                            bbox_oryginalny_obrazek(indeks_obrazka_z_maksymalna_wartoscia_bieli,3)*1.74, bbox_oryginalny_obrazek(indeks_obrazka_z_maksymalna_wartoscia_bieli,4)*1.74];
+    
+    catch
+    % jeżeli nie wykryto żadnego bbox to ustalamy pustą wartość
+    powiekszona_granica=[0 0 0 0];
+
+end
+      
+
+
+
+    %% Zapisywanie do struktury według wytycznych
+    saveToFile(ii).image=currentfilename;
+    saveToFile(ii).BoundingBox=powiekszona_granica;
+    saveToFile=transpose(saveToFile);
+
 end
 
-tabela = struct2table(data.Task_2_Training_Data);
-tabela(:,2) = [];
-tabela.BoundingBox = WEKTOR_gotowy;
-
-idx = height(WEKTOR_gotowy);
-training_idx = 1:floor(0.6*idx);
-test_idx = floor(0.8*idx)+1:idx;
-valid_idx = floor(0.6*idx)+1:floor(0.8*idx);
-
-training_data = (tabela(training_idx,:));
-test_data = (tabela(test_idx,:));
-valid_data = (tabela(valid_idx,:));
-
-img_train = imageDatastore(training_data{:,"Image"});
-labels_train = boxLabelDatastore(training_data(:,"BoundingBox"));
-
-img_test = imageDatastore(test_data{:,"Image"});
-labels_test = boxLabelDatastore(test_data(:,"BoundingBox"));
-
-img_valid = imageDatastore(valid_data{:,"Image"});
-labels_valid = boxLabelDatastore(valid_data(:,"BoundingBox"));
-
-training_data = combine(img_train,labels_train);
-test_data = combine(img_test,labels_test);
-valid_data = combine(img_valid,labels_valid);
-
-%% wizualizacja przykład
-data = read(training_data);
-I = data{1};
-bbox = data{2};
-annotatedImage = insertShape(I,"Rectangle",bbox);
-annotatedImage = imresize(annotatedImage,2);
-figure
-imshow(I);
-
-%% YOLO
-% inputSize = [608 608 3];
-% className = "BoundingBox";
-% 
-% rng("default")
-% trainingDataForEstimation = transform(training_data,@(data)preprocessData(data,inputSize));
-% numAnchors = 9;
-% [anchors,meanIoU] = estimateAnchorBoxes(trainingDataForEstimation,numAnchors);
-% 
-% 
-% area = anchors(:, 1).*anchors(:,2);
-% [~,idx] = sort(area,"descend");
-% 
-% anchors = anchors(idx,:);
-% anchorBoxes = {anchors(1:3,:)
-%     anchors(4:6,:)
-%     anchors(7:9,:)
-%     };
-% 
-% options = trainingOptions("adam",...
-%     GradientDecayFactor=0.9,...
-%     SquaredGradientDecayFactor=0.999,...
-%     InitialLearnRate=0.01,...
-%     LearnRateSchedule="none",...
-%     MiniBatchSize=16,...
-%     L2Regularization=0.0005,...
-%     MaxEpochs=1,...
-%     BatchNormalizationStatistics="moving",...
-%     DispatchInBackground=true,...
-%     ResetInputNormalization=false,...
-%     Shuffle="every-epoch",...
-%     VerboseFrequency=20,...
-%     ValidationFrequency=5000,...
-%     CheckpointPath=tempdir,...
-%     ValidationData=valid_data);
-% 
-% detector = yolov4ObjectDetector("csp-darknet53-coco",className,anchorBoxes,InputSize=inputSize);
-% %detector = downloadPretrainedYOLOv4Detector();
-% [detector,info] = trainYOLOv4ObjectDetector(trainingDataForEstimation,detector,options);
-% 
-% [bboxes,scores,labels] = detect(detector,I);
-% 
-% I2 = insertObjectAnnotation(I,"rectangle",bboxes,scores);
-% figure
-% imshow(I2)
+%% Zapisywanie do pliku
+save Task_2_MSKNDecybel.mat saveToFile
